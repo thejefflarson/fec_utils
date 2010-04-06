@@ -3,5 +3,6 @@ module FecUtils
     require 'fec_utils/itemized_parsers/base'
     require 'fec_utils/itemized_parsers/pas_parse'
     require 'fec_utils/itemized_parsers/candidate_parse'
+    require 'fec_utils/itemized_parsers/committee_parse'
   end
 end

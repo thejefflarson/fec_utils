@@ -7,12 +7,12 @@ module FecUtils::ItemizedParsers
     column :candidate_name,                  10, 38
     column :party_designation_one,           48, 3
     column :party_designation_three,         54, 3
-    column_with_options :incumbent_status, 57, 1, {
+    column_with_choices :incumbent_status, 57, 1, {
       'I' => 'Incumbent',
       'C' => 'Challenger',
       'O' => 'Open'
     }
-    column_with_options :candidate_status, 59, 1, {
+    column_with_choices :candidate_status, 59, 1, {
       'C' => 'Statutory Candidate',
       'F' => 'Statutory Candidate For Future Election',
       'N' => 'Not Yet a Statutory Candidate',
