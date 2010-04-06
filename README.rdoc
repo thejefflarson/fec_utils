@@ -1,6 +1,26 @@
 = fec_utils
 
-Description goes here.
+Seriously Alpha library of parsers for the Itemized Records found on the fec's detailed file page:
+
+http://fec.gov/finance/disclosure/ftpdet.shtml
+
+Most of the ineresting bits are in:
+
+ FecUtils::ItemizedParsers::Base
+
+To use a particular parser do something like:
+
+  >> rows = File.open(File.join(File.dirname(__FILE__), "assets", "itpas2.dta")).read.split("\n")
+  >> parsed_rows = FecUtils::ItemizedParsers::PasParse.all(rows)
+  >> parsed_rows.first.candidate_identification_number
+  => C00000042NMY
+
+== TODO
+
+ * needs to parse the amount correctly
+ * in PasParse needs a coupla column_with_choices
+ * needs a parser for "Any Transaction from One Committee to Another" 
+ * testing is a good idea, I write more/some tests
 
 == Note on Patches/Pull Requests
  

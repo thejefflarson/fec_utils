@@ -51,3 +51,30 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+
+require 'lib/fec_utils'
+
+desc "parse pas"
+task :pas do
+  rows = File.open(File.join(File.dirname(__FILE__), "assets", "itpas2.dta")).read.split("\n")
+  parsed_rows = FecUtils::ItemizedParsers::PasParse.rows_by_transaction_type(rows, ["24F"])
+  parsed_rows.each do |row|
+    str = ""
+    FecUtils::ItemizedParsers::PasParse.columns.each do |column|
+     str << row.send(column).to_s + "\t"
+    end
+    puts str
+  end
+end
+
+task :pas_breakdown do
+  rows = File.open(File.join(File.dirname(__FILE__), "assets", "itpas2.dta")).read.split("\n")
+  FecUtils::ItemizedParsers::PasParse.count_by_transaction_type(rows).each do |key, value|
+    puts "#{key}\t#{value}"
+  end
+end
+
+
+
+
