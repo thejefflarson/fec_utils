@@ -4,7 +4,7 @@ Seriously Alpha library of parsers for the Itemized Records found on the fec's d
 
 http://fec.gov/finance/disclosure/ftpdet.shtml
 
-Most of the ineresting bits are in:
+Most of the interesting bits are in:
 
  FecUtils::ItemizedParsers::Base
 
