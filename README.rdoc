@@ -12,8 +12,8 @@ To use a particular parser do something like:
 
   >> rows = File.open(File.join(File.dirname(__FILE__), "assets", "itpas2.dta")).read.split("\n")
   >> parsed_rows = FecUtils::ItemizedParsers::PasParse.all(rows)
-  >> parsed_rows.first.candidate_identification_number
-  => C00000042NMY
+  >> parsed_rows.first.candidate_identification
+  => H2TX23082
 
 == TODO
 
