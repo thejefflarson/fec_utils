@@ -17,10 +17,10 @@ To use a particular parser do something like:
 
 == TODO
 
- * needs to parse the amount correctly
- * in PasParse needs a coupla column_with_choices
- * needs a parser for "Any Transaction from One Committee to Another" 
- * testing is a good idea, I write more/some tests
+* needs to parse the amount correctly
+* in PasParse needs a coupla column_with_choices
+* needs a parser for "Any Transaction from One Committee to Another" 
+* testing is a good idea, I should write more/some tests
 
 == Note on Patches/Pull Requests
  
