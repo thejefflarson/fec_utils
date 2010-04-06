@@ -33,9 +33,11 @@ module FecUtils::ItemizedParsers
     end
     
     def amount(data)
-      overpunch = data.pop
-      
-      # tk http://fec.gov/finance/disclosure/ftpdet.shtml
+      overpunch = data.slice!(data.length-1, 1)
+      positive = "}JKLMNOPQR"
+      negative = "{ABCDEFGHI"
+      return (data + positive.index(overpunch).to_s).to_i if positive.include? overpunch
+      (data + negative.index(overpunch).to_s).to_i * -1
     end
     
     

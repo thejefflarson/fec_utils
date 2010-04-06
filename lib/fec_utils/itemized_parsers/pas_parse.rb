@@ -10,7 +10,7 @@ module FecUtils::ItemizedParsers
     column :microfilm_location,        15, 11
     column :transaction_type,          26, 3
     column :transaction_date,          29, 8, :date 
-    column :amount,                    37, 7, :number
+    column :amount,                    37, 7, :amount
     column :other_identification,      44, 9
     column :candidate_identification,  53, 9
     column :fec_record,                62, 7
