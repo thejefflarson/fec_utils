@@ -34,8 +34,14 @@ module FecUtils::ItemizedParsers
     
     def amount(data)
       overpunch = data.slice!(data.length-1, 1)
+      case overpunch
+        when "]" then overpunch = "}"
+        when "[" then overpunch = "{"
+      end
+      
       positive = "}JKLMNOPQR"
       negative = "{ABCDEFGHI"
+      
       return (data + positive.index(overpunch).to_s).to_i if positive.include? overpunch
       (data + negative.index(overpunch).to_s).to_i * -1
     end
