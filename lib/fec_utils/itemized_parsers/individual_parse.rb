@@ -1,5 +1,7 @@
 module FecUtils::ItemizedParsers
   class IndividualParse
+    include FecUtils::ItemizedParsers::Base
+    
     column :filer_identification_number,   1, 9
     column :amendment_indicator,          10, 1
     column :report_type,                  11, 3
