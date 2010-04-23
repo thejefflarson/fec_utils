@@ -3,7 +3,7 @@ module FecUtils::ItemizedParsers
     include FecUtils::ItemizedParsers::Base
     # from ftp://ftp.fec.gov/FEC/cn_dictionary.txt
     
-    column :candidate_information,            1, 9
+    column :candidate_identification,         1, 9
     column :candidate_name,                  10, 38
     column :party_designation_one,           48, 3
     column :party_designation_three,         54, 3

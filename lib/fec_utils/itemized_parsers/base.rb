@@ -20,7 +20,7 @@ module FecUtils::ItemizedParsers
     end
     
     def string(data)
-      data
+      data.chomp
     end
     
     def date(data)
